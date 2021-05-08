@@ -36,7 +36,6 @@ set shiftwidth=4
 set autoindent
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-
 " Autocommands
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType c,cpp setlocal colorcolumn=80 shiftwidth=8 expandtab
