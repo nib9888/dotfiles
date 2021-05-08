@@ -1,0 +1,3 @@
+#!/bin/execlineb
+
+fdmove -c 2 1 mpd --no-daemon --stderr

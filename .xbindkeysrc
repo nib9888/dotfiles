@@ -1,0 +1,56 @@
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+"mpc toggle"
+  XF86AudioPlay
+
+"mpc prev"
+  XF86AudioPrev
+
+"mpc next"
+  XF86AudioNext
+
+"amixer set MPD 5%+ -M"
+  Shift+XF86AudioRaiseVolume
+
+"amixer set MPD 5%- -M"
+  Shift+XF86AudioLowerVolume
+
+"amixer set Master 5%+ -M"
+  XF86AudioRaiseVolume
+
+"amixer set Master 5%- -M"
+  XF86AudioLowerVolume
+
+"amixer set Master toggle"
+  XF86AudioMute
+
+
+"maim | xclip -selection clipboard -t image/png && notify-send 'Saved' 'Screenshot saved to clipboard'"
+  Print
+
+"maim -o -s | xclip -selection clipboard -t image/png && notify-send 'Saved' 'Screenshot saved to clipboard'"
+  Insert
+
+
+"xbacklight -inc 10"
+  XF86MonBrightnessUp
+
+"xbacklight -dec 10"
+  XF86MonBrightnessDown
+
+
+"/home/enigma/Scripts/togglepicom"
+  Mod4+p
+
+"/home/enigma/Scripts/togglexava"
+  Shift+Mod4+p
+
+#"sleep 0.04 && xdotool click 3 && sleep 0.01 && xdotool click 1"
+#  v

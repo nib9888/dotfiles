@@ -1,0 +1,74 @@
+#######################
+##                   ## 
+## nib9888's dunstrc ##
+##                   ##
+#######################
+
+[global]
+    follow = mouse
+
+    geometry = "256x9-12+16"
+    separator_height = 6
+    padding = 8
+    horizontal_padding = 8
+    frame_width = 0
+    separator_color = "#0000"
+    transparency = 15
+
+    sort = yes
+    idle_threshold = 120
+
+    font = Monospace 8
+    line_height = 2
+    markup = full
+    format = "<b>%a - %s</b>\n%b"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    show_indicators = false
+
+    icon_position = right
+    max_icon_size = 32
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/firefox-bin -new-tab
+    startup_notification = false
+    verbosity = mesg
+
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[shortcuts]
+
+    # Disable all shortcuts except for context and close all
+    close = 
+    close_all = ctrl+shift+comma
+    history = 
+    context = ctrl+shift+period
+
+[urgency_low]
+
+    background = "#100a05"
+    foreground = "#b8b8b8"
+    timeout = 20
+
+[urgency_normal]
+
+    background = "#100a05"
+    foreground = "#e4d3b9"
+    timeout = 30
+
+[urgency_critical]
+
+    background = "#100a05"
+    foreground = "#e75646"
+    timeout = 0
+
+#############
+##         ##
+##   EOF   ##
+##         ##
+#############
+
+# vim:ft=cfg

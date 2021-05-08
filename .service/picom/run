@@ -1,0 +1,3 @@
+#!/bin/execlineb
+
+fdmove -c 2 1 export DISPLAY :0 picom

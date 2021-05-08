@@ -1,0 +1,7 @@
+feh --bg-fill ~/Pictures/Wallpapers/Autumn\ Scene.jpg
+s6-svc -u ~/.service/mpd
+s6-svc -u ~/.service/xbindkeys
+s6-svc -u ~/.service/xss-lock
+s6-svc -u ~/.service/dunst
+s6-svc -u ~/.service/picom
+s6-svc -u ~/.service/xava
