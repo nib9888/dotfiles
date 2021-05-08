@@ -17,6 +17,7 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
+
 " Various Settings
 filetype off
 filetype plugin indent on
