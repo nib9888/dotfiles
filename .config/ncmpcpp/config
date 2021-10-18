@@ -1,0 +1,169 @@
+##############################
+##                          ##
+## nib9888's ncmpcpp config ##
+##                          ##
+##############################
+
+##
+## Files and Directories
+##
+
+ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.ncmpcpp/lyrics
+mpd_music_dir = ~/Music/mpd/
+
+##
+## MPD Settings
+##
+
+mpd_host = localhost
+mpd_port = 6600
+mpd_crossfade_time = 0
+
+##
+## Visualizer
+##
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = MPD Fifo
+visualizer_in_stereo = yes
+visualizer_type = spectrum
+visualizer_look = ⠉⣿
+#visualizer_color = 10, red, magenta, green, 12, yellow, cyan, blue
+visualizer_color = 10
+visualizer_spectrum_dft_size = 1
+visualizer_spectrum_hz_min = 30
+
+##
+## General Settings
+##
+
+user_interface = alternative
+header_visibility = no
+header_text_scrolling = yes
+
+playlist_disable_highlight_delay = 5
+playlist_shorten_total_times = yes
+playlist_display_mode = columns
+playlist_editor_display_mode = columns
+space_add_mode = always_add
+
+discard_colors_if_item_is_selected = yes
+show_duplicate_tags = yes
+seek_time = 4
+autocenter_mode = yes
+media_library_primary_tag = artist
+default_find_mode = wrapped
+
+jump_to_now_playing_song_at_start = yes
+startup_screen = clock
+locked_screen_width_part = 50
+ask_for_locked_screen_width_part = no
+
+ask_before_clearing_playlists = no
+clock_display_seconds = yes
+display_volume_level = no
+display_bitrate = no
+display_remaining_time = no
+cyclic_scrolling = no
+
+empty_tag_marker = <empty>
+tags_separator = " | "
+progressbar_look = ┉┉┄
+
+mouse_support = yes
+media_library_sort_by_mtime = no
+regular_expressions = perl
+
+generate_win32_compatible_filenames = yes
+allow_for_physical_item_deletion = no
+enable_window_title = yes
+search_engine_default_search_mode = 2
+external_editor = vim
+use_console_editor = yes
+message_delay_time = 2
+
+##
+## Format Strings
+##
+
+# Used in "Added to Playlist: .... "
+song_status_format = {{%a - }{%t}}|{%f} 
+
+# Top header - $a is for alt characters
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b 
+
+# Below header
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}}|{%D}
+
+# Columns
+song_columns_list_format = (20)[15]{a} (42)[white]{t|f:Title} (34)[cyan]{b} (6f)[red]{l:Length}
+
+# Current item
+current_item_prefix = $(16_green)
+current_item_suffix = $(end)
+
+# Current item in an inactive column
+current_item_inactive_column_prefix = $(white_blue)
+current_item_inactive_column_suffix = $(end)
+
+# Currently playing item
+now_playing_prefix = $b
+now_playing_suffix = $/b
+
+# Modified item in tag editor
+modified_item_prefix = $3> $9
+
+# Selected items
+selected_item_prefix = $2
+selected_item_suffix = $9
+
+# WM_TITLE
+song_window_title_format = ncmpcpp  ---  {%a - }{%t}|{%f}
+
+# Unused because display mode is columns and browser is disabled
+#song_list_format = $3{%a - }$9{%t}|{$8%f$9}$R{$3(%l)$9}
+# Unused because media library is disabled
+#song_library_format = {{%a - }{%t}}|{%f}
+# Unused because browser is disabled
+#browser_playlist_prefix = "$2playlist$9 "
+
+##
+## Colours
+##
+
+colors_enabled = yes
+
+# Header and main window
+main_window_color = 15
+header_window_color = default
+state_line_color = default
+state_flags_color = default:b
+alternative_ui_separator_color = black:b
+
+# Tiny tag editor colours
+color1 = 16
+color2 = 14
+empty_tag_color = cyan
+
+# Progressbar
+progressbar_color = 4:b
+progressbar_elapsed_color = 12:b
+
+# Bottom statusbar
+statusbar_color = default
+statusbar_time_color = default:b
+player_state_color = default:b
+
+# Other windows
+window_border_color = black
+active_window_border = black
+
+# Unused
+#volume_color = default
+
+#############
+##         ##
+##   EOF   ##
+##         ##
+#############

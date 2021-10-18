@@ -1,0 +1,18 @@
+#############################
+##                         ##
+## nib9888's flake8 config ##
+##                         ##
+#############################
+
+[flake8]
+enable-extensions = G
+ignore = W503, I202, DAR101, E501, S311
+import-order-style = pep8
+
+#############
+##         ##
+##   EOF   ##
+##         ##
+#############
+
+# vim: ft=cfg
