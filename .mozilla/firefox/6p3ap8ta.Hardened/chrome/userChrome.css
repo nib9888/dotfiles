@@ -1,0 +1,491 @@
+ :root {
+
+   /* Minimal Functional Fox variables*/
+  --mff-bg: #1e1a1580;
+  --mff-highlight-bg: #21251d80;
+  --mff-highlight-text: #efd7b3;
+  --mff-icon-color: #e0fbfc;
+  --mff-nav-toolbar-padding: 8px;
+  --mff-sidebar-bg: var(--mff-bg);
+  --mff-sidebar-color: #e0fbfc;
+  --mff-tab-border-radius: 6px;
+  --mff-tab-color: #fefefa;
+  --mff-tab-font-family: sans;
+  --mff-tab-font-size: 11pt;
+  --mff-tab-font-weight: 400;
+  --mff-tab-height: 36px;
+  --mff-tab-pinned-bg: #c76c60d0;
+  --mff-tab-selected-bg: #d37055d0;
+  --mff-tab-soundplaying-bg: #d7b942d0;
+  --mff-urlbar-color: #e4d3b9;
+  --mff-urlbar-focused-color: #e2c8a2;
+  --mff-urlbar-font-family: serif;
+  --mff-urlbar-font-size: 12pt;
+  --mff-urlbar-font-weight: 500;
+  --mff-urlbar-results-color: #dfcb90;
+  --mff-urlbar-results-font-family: serif;
+  --mff-urlbar-results-title-color: #80a362;
+  --mff-urlbar-results-font-size: 12pt;
+  --mff-urlbar-results-font-weight: 500;
+  --mff-urlbar-results-url-color: var(--mff-highlight-text);
+  /*   --mff-tab-selected-bg: linear-gradient(90deg, rgba(232,74,95,1) 0%, rgba(255,132,124,1) 50%, rgba(254,206,168,1) 100%); */
+
+  /* Overriden Firefox variables*/
+  --autocomplete-popup-background: var(--mff-bg) !important;
+  --default-arrowpanel-background: var(--mff-bg) !important;
+  --default-arrowpanel-color: #fefefa !important;
+  --lwt-toolbarbutton-icon-fill: var(--mff-icon-color) !important;
+  --panel-disabled-color: #f9f9fa80;
+  --toolbar-bgcolor: var(--mff-bg) !important;
+  --urlbar-separator-color: transparent !important;
+  --urlbar-popup-action-color: var(--mff-urlbar-results-url-color) !important;
+  --lwt-toolbar-field-highlight: var(--mff-highlight-bg) !important;
+  --lwt-toolbar-field-highlight: var(--mff-highlight-text) !important;
+  --autocomplete-popup-highlight-background: var(--mff-highlight-bg) !important;
+  --autocomplete-popup-highlight-color: var(--mff-highlight-text) !important;
+
+}
+
+/* Semi-transparency because I can't get transparency to work */
+body > box {
+  background-image: url("file:///home/enigma/Pictures/Wallpapers/Autumn Scene Blurry.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#navigator-toolbox {
+  appearance: auto !important;
+}
+
+/*
+  _____ _   ___ ___
+ |_   _/_\ | _ ) __|
+   | |/ _ \| _ \__ \
+   |_/_/ \_\___/___/
+
+*/
+
+
+/* This positions the tabs under the navaigator container */
+#titlebar {
+  -moz-box-ordinal-group: 3 !important;
+  appearance: none !important;
+  background-image: linear-gradient(transparent, #1e1a15c0) !important;
+}
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  border-left: none !important;
+}
+
+.tab-background {
+  border: none !important;
+}
+
+.tabbrowser-arrowscrollbox {
+  margin-inline-start: 4px !important;
+  margin-inline-end: 0px !important;
+}
+
+.tab-close-button {
+ display: none !important;
+}
+
+.tab-text {
+  font-family: var(--mff-tab-font-family);
+  font-weight: var(--mff-tab-font-weight);
+  font-size: var(--mff-tab-font-size) !important;
+  color: var(--mff-tab-color);
+}
+
+/* Hide the favicon for tabs */
+hbox.tab-content .tab-icon-image {
+  display: none !important;
+}
+
+/* Show the favicon for tabs that are pinned */
+hbox.tab-content[pinned=true] .tab-icon-image {
+  display: initial !important;
+}
+
+hbox.tab-content[pinned=true] .tab-text {
+  display: none !important;
+}
+
+vbox.tab-label-container {
+  /*flex-direction: column !important;*/
+}
+
+/*tab.tabbrowser-tab[pinned=true] .tab-stack .tab-background {
+  background: var(--mff-tab-pinned-bg) !important;
+}*/
+
+#tabbrowser-tabs {
+  --tab-loading-fill: #033433 !important;
+
+}
+
+.tab-label-container:not([textoverflow]) {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+width: 50% !important;
+  max-width: 50% !important;
+  min-width: 50% !important;
+}
+
+/* .tab-label-container::after {
+  content: "?" !important;
+
+} */
+
+.tab-line {
+  display: none !important;
+}
+
+.tabbrowser-tab {
+  border-radius: var(--mff-tab-border-radius) !important;
+  border-width: 0;
+  height: var(--mff-tab-height) !important;
+  margin-bottom: 4px !important;
+  margin-inline-end: 4px !important;
+  margin-top: 4px !important;
+  max-height: var(--mff-tab-height) !important;
+  min-height: var(--mff-tab-height) !important;
+}
+
+.tabbrowser-tab[soundplaying="true"] {
+  background-color: var(--mff-tab-soundplaying-bg) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background: var(--mff-tab-selected-bg) !important;
+}
+
+.tabbrowser-tab:not[visuallyselected] {
+  background: var(--mff-tab-selected-bg) !important;
+  opacity: 0.5 !important;
+}
+
+.tab-background {
+  display: none !important;
+}
+
+vbox.tab-label-container {
+  flex-direction: column !important;
+}
+
+#tabs-newtab-button {
+  list-style-image: url("add.svg") !important;
+  opacity: 0.7;
+}
+
+.tab-icon-sound {
+  display: none !important;
+}
+
+/*
+  _____ ___   ___  _    ___   _   ___
+|_   _/ _ \ / _ \| |  | _ ) /_\ | _ \
+  | || (_) | (_) | |__| _ \/ _ \|   /
+  |_| \___/ \___/|____|___/_/  \_\_|_\
+*/
+
+.urlbar-icon > image {
+  fill: var(--mff-icon-color) !important;
+  color: var(--mff-icon-color) !important;
+}
+
+.toolbarbutton-text {
+  color: var(--mff-icon-color)  !important;
+}
+
+.urlbar-icon {
+  color: var(--mff-icon-color)  !important;
+}
+
+#pageActionButton {
+  visibility: visible !important;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+#urlbar:hover #pageActionButton {
+  opacity: 1;
+}
+
+#reader-mode-button {
+  display: none;
+}
+
+.toolbarbutton-icon {
+/* filter: drop-shadow(0 0 0.75rem crimson); */
+}
+
+#urlbar-results {
+  font-family: var(--mff-urlbar-results-font-family);
+  font-weight: var(--mff-urlbar-results-font-weight);
+  font-size: var(--mff-urlbar-results-font-size) !important;
+  color: var(--mff-urlbar-results-color) !important;
+}
+
+.urlbarView-row[type="bookmark"] > span.urlbarView-action {
+  color: green !important;
+}
+
+.urlbarView-row[type="switchtab"] > span.urlbarView-action {
+  color: var(--mff-tab-pinned-bg) !important;
+}
+
+.urlbarView-row[selected] > span.urlbarView-action {
+  color: var(--mff-urlbar-results-url-color) !important;
+}
+
+.urlbarView-url, .search-panel-one-offs-container {
+  color: var(--mff-urlbar-results-url-color) !important;
+  font-family: var(--mff-urlbar-font-family);
+  font-weight: var(--mff-urlbar-results-font-weight);
+  font-size: var(--mff-urlbar-font-size) !important;
+}
+
+.urlbarView-title {
+  color: var(--mff-urlbar-results-title-color) !important;
+  font-family: var(--mff-urlbar-font-family);
+}
+
+.urlbarView-row[selected] > .urlbarView-row-inner {
+  /*color: ;*/
+  border-radius: 3px !important;
+}
+
+.urlbarView-row[selected] > .urlbarView-row-inner .urlbarView-title {
+  color: #b9cca8 !important;
+}
+
+#urlbar-search-mode-indicator {
+  background-color: #80a362 !important;
+  outline-width: 0 !important;
+  border-radius: 6px;
+}
+
+#urlbar-search-mode-indicator-title {
+  color: #ffffff;
+  padding-inline: 10px !important;
+  font-weight: bold;
+}
+
+#urlbar-search-mode-indicator-close {
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+#urlbar-label-box {
+  font-weight: bold;
+  color: #ffffff !important;
+  background-color: #80a362 !important;
+  border-radius: 6px;
+  padding-inline: 10px !important;
+}
+
+.urlbar-label {
+  opacity: 1 !important;
+}
+
+#urlbar .search-panel-one-offs-header-label {
+  color: #e8e8e8;
+}
+
+#urlbar .searchbar-engine-one-off-item {
+  border-radius: 3px !important;
+}
+
+.urlbarView-favicon, .urlbarView-type-icon {
+  display: none !important;
+}
+
+#urlbar-input {
+  font-size: var(--mff-urlbar-font-size) !important;
+  color: var(--mff-urlbar-color) !important;
+  font-family: var(--mff-urlbar-font-family) !important;
+  font-weight: var(--mff-urlbar-font-weight)!important;
+  text-align: center !important;
+  padding: 0 5px;
+}
+
+#tracking-protection-icon-container, #identity-box {
+  display: none;
+}
+
+#back-button > .toolbarbutton-icon{
+  --backbutton-background: transparent !important;
+  border: none !important;
+}
+
+#back-button {
+  list-style-image: url("left-arrow.svg") !important;
+}
+
+#forward-button {
+  list-style-image: url("right-arrow.svg") !important;
+}
+
+toolbar {
+  background-image: none !important;
+}
+
+#urlbar-background {
+  opacity: .98 !important;
+}
+
+#navigator-toolbox, toolbaritem {
+  border: none !important;
+}
+
+#urlbar-background {
+  background-color: var(--mff-bg) !important;
+  border: none !important;
+}
+
+.toolbar-items {
+  background-color: var(--mff-bg) !important;
+}
+
+#sidebar-search-container {
+  background-color: var(--mff-sidebar-bg) !important;
+}
+
+box.panel-arrowbox {
+  display: none;
+}
+
+box.panel-arrowcontent {
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+tab.tabbrowser-tab {
+  overflow: hidden;
+}
+
+tab.tabbrowser-tab:hover {
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+image#star-button {
+  display: none;
+}
+
+toolbar#nav-bar {
+  padding: var(--mff-nav-toolbar-padding) !important;
+}
+
+toolbar#nav-bar {
+  padding: 4px !important;
+}
+
+toolbar#toolbar-menubar {
+  background-color: var(--mff-bg);
+}
+
+toolbaritem#menubar-items {
+  -moz-box-orient: horizontal !important;
+}
+
+#urlbar {
+  max-width: 70% !important;
+  margin: 0 15% !important;
+  /* 	position: unset!important; */;
+}
+
+#urlbar-input:focus {
+  color: var(--mff-urlbar-focused-color) !important;
+}
+
+
+.megabar[breakout-extend="true"]:not([open="true"]) > #urlbar-background {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+toolbarbutton {
+  box-shadow: none !important;
+}
+
+hbox.titlebar-spacer, hbox.titlebar-buttonbox-container {
+  display: none;
+}
+
+/*
+  ___ ___ ___  ___ ___   _   ___
+ / __|_ _|   \| __| _ ) /_\ | _ \
+ \__ \| || |) | _|| _ \/ _ \|   /
+ |___/___|___/|___|___/_/ \_\_|_\
+*/
+
+.close-icon, .urlbar-icon {
+  fill: var(--mff-icon-color) !important;
+}
+
+.sidebar-placesTree {
+  color: var(--mff-sidebar-color) !important;
+}
+
+#sidebar-switcher-target {
+/*   color: white !important; */
+}
+
+#sidebar-box {
+  --sidebar-background-color: var(--mff-sidebar-bg) !important;
+}
+
+splitter#sidebar-splitter {
+  opacity: 0 !important;
+}
+
+splitter#sidebar-splitter {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+image#sidebar-icon {
+  display: none;
+}
+
+
+/*
+    _   ___ ___  _____      _____  _   _  _ ___ _
+   /_\ | _ \ _ \/ _ \ \    / / _ \/_\ | \| | __| |
+  / _ \|   /   / (_) \ \/\/ /|  _/ _ \| .` | _|| |__
+ /_/ \_\_|_\_|_\\___/ \_/\_/ |_|/_/ \_\_|\_|___|____|
+ */
+
+.panel-arrowcontent {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+toolbarseparator {
+  display: none;
+}
+
+
+
+
+menupopup::part(drop-indicator) {
+  background-color: var(--mff-highlight-bg) !important;
+}
+
+.autocomplete-richlistitem[selected] {
+  background-color: var(--mff-highlight-bg) !important;
+  color: var(--mff-highlight-text) !important;
+}
+
+.bookmark-item[dragover-into="true"] {
+  background: var(--mff-highlight-bg) !important;
+  color: var(--mff-highlight-text) !important;
+}
+
+#tabbrowser-arrow-scrollbox[highlight]::part(scrollbutton-down) {
+  background-color: var(--mff-highlight-bg) !important;
+}
+
